@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ch" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="icon" type="image/svg+xml" href="static/image/ow_icon.svg">
+    <link rel="stylesheet" type="text/css" href="static/css/register_style.css">
+</head>
+
+<body>
+    <div id="title">
+        <h2>
+            注册
+        </h2>
+    </div>
+
+    <div>
+        <form class="register" method="post" action="register">
+            <div class="input-group">
+                <div class="input-group-input">
+                    <label>
+                        <input type="text" name="username" placeholder="用户名">
+                    </label>
+                    <label>
+                        <input type="text" name="nickname" placeholder="昵称">
+                    </label>
+                    <label>
+                        <input type="password" name="password" placeholder="密码">
+                    </label>
+                </div>
+                <div class="bottom">
+                    <button type="submit">注册</button>
+                    <a th:href="${login_url}">已有账号？去登录</a>
+                    <p th:if="${userExist}" style="color: red"> 用户名已存在！ </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

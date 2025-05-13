@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="static/css/top-bar_style.css">
+<html lang="ch" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <LINK rel="icon" type="image/svg+xml" href="static/image/ow_icon.svg">
+</head>
+
+<body>
+    <div class="top-bar" th:fragment="top-bar">
+        <ul class="bar">
+            <img src = "static/image/ow_icon.svg" alt="logo" class="bar-logo">
+            <li>抽卡<a href="index"></a></li>
+            <li>我的背包</li>
+            <li th:text="'欢迎登录：'+${username}" id="show-nickname"></li>
+            <li id="quit_login">
+                <a href = "doLogout" id="logout">
+                    退出登录
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>

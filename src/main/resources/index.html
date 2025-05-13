@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ch" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+    <link rel="stylesheet" type="text/css" href="static/css/top-bar_style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/index_style.css">
+    <link rel="icon" type="image/svg+xml" href="static/image/ow_icon.svg">
+</head>
+
+<body>
+    <div th:insert="top-bar.html::top-bar"></div>
+    <div class="gacha-page">
+        <div class="show-your-balance">
+            <p>你的货币</p>
+            <img src="../webapp/static/image/OW2_coin.svg" alt="coin" id="coin-img">
+            <p>余额: </p>
+            <p th:text="${balance}"></p>
+        </div>
+
+        <form method="post" action="index">
+            <button type="submit" value="抽一发" >抽一发</button>
+        </form>
+
+    </div>
+</body>
