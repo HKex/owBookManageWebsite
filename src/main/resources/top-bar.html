@@ -10,11 +10,11 @@
     <div class="top-bar" th:fragment="top-bar">
         <ul class="bar">
             <img src = "static/image/ow_icon.svg" alt="logo" class="bar-logo">
-            <li>抽卡<a href="index"></a></li>
-            <li>我的背包</li>
-            <li th:text="'欢迎登录：'+${username}" id="show-nickname"></li>
+            <li>首页<a href="index"></a></li>
+            <li>借阅</li>
+            <li th:text="'欢迎登录：'+${nickname}" id="show-nickname"></li>
             <li id="quit_login">
-                <a href = "doLogout" id="logout">
+                <a href = "/logout" id="logout">
                     退出登录
                 </a>
             </li>

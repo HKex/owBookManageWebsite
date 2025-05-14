@@ -10,17 +10,7 @@
 
 <body>
     <div th:insert="top-bar.html::top-bar"></div>
-    <div class="gacha-page">
-        <div class="show-your-balance">
-            <p>你的货币</p>
-            <img src="../webapp/static/image/OW2_coin.svg" alt="coin" id="coin-img">
-            <p>余额: </p>
-            <p th:text="${balance}"></p>
-        </div>
-
-        <form method="post" action="index">
-            <button type="submit" value="抽一发" >抽一发</button>
-        </form>
+    <div class="user-bookinfo-page">
 
     </div>
 </body>
