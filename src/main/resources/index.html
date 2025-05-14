@@ -11,6 +11,31 @@
 <body>
     <div th:insert="top-bar.html::top-bar"></div>
     <div class="user-bookinfo-page">
-
+        <div>
+            <h2>书籍借阅信息</h2>
+            <button class="add-info-button" onclick="handleAddInfo()">添加借阅信息</button>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>书籍ID</th>
+                <th>名称</th>
+                <th>借阅时间</th>
+                <th>借阅人</th>
+                <th>借阅人学号</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="borrow : ${borrows}">
+                <td th:text="${borrow.getBook_id()}"></td>
+                <td th:text="${borrow.getBook_name()}"></td>
+                <td th:text="${borrow.getTime() != null ? #dates.format(borrow.getTime(), 'yyyy年MM月DD日 HH时mm分' ) : '----'}"></td>
+                <td th:text="${borrow.getUsername()}"></td>
+                <td th:text="${borrow.getStudent_id()}"></td>
+                <td><button class="return-button" >归还</button></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </body>

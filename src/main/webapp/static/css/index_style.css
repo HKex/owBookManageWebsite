@@ -2,32 +2,86 @@ body{
     background-image: url("../image/index_background.webp");
     background-size: cover;
 }
+.user-bookinfo-page {
+    /* 假设你的 top-bar 是固定高度的。你需要将这里的 70px 替换为你的 top-bar 的实际高度 + 一些间距 */
+    margin-top: 120px; /* 或者使用 padding-top，取决于top-bar的实现方式 */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 
-#coin-img{
-    width: 20px;
-    height: 20px;
+    background-color: #ffffff; /* 白色背景应用于整个内容区域 */
+    padding: 20px 25px;        /* 内边距，让内容和边框有空隙 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 阴影效果 */
+    border-radius: 8px;       /* 圆角 */
 }
-.show-your-balance{
-    display: flex;
-    flex-direction: row;
+
+/* 新增：页面头部容器，用于放置标题和按钮 */
+.page-header {
+    display: flex;                 /* 使用Flexbox布局 */
+    justify-content: space-between;/* 标题居左，按钮居右 */
+    align-items: center;           /* 垂直居中对齐 */
+    margin-bottom: 20px;           /* 头部和表格之间的间距 */
+    padding-bottom: 15px;          /* 头部内容和下方分割线（可选）的间距 */
+    border-bottom: 1px solid #eee; /* 在标题和按钮下方添加一条细线 (可选) */
 }
-.gacha-page{
-    position: fixed;
-    bottom: 50%;
-    right: 50%;
+
+.page-header h2 {
+    margin: 0;                 /* 移除h2的默认外边距 */
+    color: #333;               /* 标题颜色 */
+    font-size: 24px;           /* 标题字号 */
 }
-button {
-    background-color: #05A0FA;
-    border: none;
+
+/* 新增：“添加借阅信息”按钮样式 */
+.add-info-button {
+    padding: 8px 15px;
+    background-color: #007bff; /* 蓝色，通常用于“添加”或“主要”操作 */
     color: white;
-    border-radius: 10px;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
 }
-button:hover {
-    background-color: #06B0FF;
-    opacity: 0.8;
+
+.add-info-button:hover {
+    background-color: #0056b3; /* 深一点的蓝色 */
+}
+
+/* 表格样式 - 移除之前单独赋予表格的背景和阴影 */
+.user-bookinfo-page table {
+    width: 100%;
+    border-collapse: collapse;
+    /* background-color, box-shadow, border-radius 已经移到 .user-bookinfo-page */
+}
+
+.user-bookinfo-page th,
+.user-bookinfo-page td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 12px 15px;
+}
+
+.user-bookinfo-page th {
+    background-color: #f8f9fa; /* 更淡雅的表头背景色 */
+    font-weight: bold;
+    color: #333;
+}
+
+.user-bookinfo-page tbody tr:hover {
+    background-color: #f1f1f1; /* 调整行悬停效果颜色 */
+}
+
+/* 归还按钮样式 (可以保持不变或微调) */
+.return-button {
+    padding: 8px 12px;
+    background-color: #28a745; /* 稍微调整一下绿色 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.return-button:hover {
+    background-color: #218838; /* 深一点的绿色 */
 }
