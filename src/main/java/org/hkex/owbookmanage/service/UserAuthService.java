@@ -2,9 +2,7 @@ package org.hkex.owbookmanage.service;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import jakarta.annotation.Resource;
-import org.hkex.owbookmanage.dao.AdminMapper;
 import org.hkex.owbookmanage.dao.UserMapper;
-import org.hkex.owbookmanage.entity.Admin;
 import org.hkex.owbookmanage.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

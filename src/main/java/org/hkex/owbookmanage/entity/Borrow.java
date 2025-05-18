@@ -1,6 +1,6 @@
 package org.hkex.owbookmanage.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
+
 import lombok.Data;
 
 import java.util.Date;

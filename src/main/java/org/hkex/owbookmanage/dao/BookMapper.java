@@ -1,8 +1,6 @@
 package org.hkex.owbookmanage.dao;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.hkex.owbookmanage.entity.Borrow;
