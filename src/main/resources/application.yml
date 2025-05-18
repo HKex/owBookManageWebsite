@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: OWBookManage
+  datasource:
+    url: jdbc:mysql://localhost:3306/owgacha_userdb
+    username: root
+    password: rootpassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mvc:
+    static-path-pattern: /static/**
+
+  security:
+    user:
+      name: admin
+      password: admin
+      roles:
+        - admin
+        - user
+
+logging:
+  level:
+      org.springframework.security: debug
+      org.hkex.owbookmanage: debug

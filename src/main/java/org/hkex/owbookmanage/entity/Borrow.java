@@ -1,11 +1,13 @@
 package org.hkex.owbookmanage.entity;
 
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
 public class Borrow {
+
     int book_id;
     String book_name;
     Date time;

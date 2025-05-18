@@ -1,23 +1,22 @@
 package org.hkex.owbookmanage.service.impl;
 
-import jakarta.servlet.http.HttpSession;
-import org.apache.ibatis.session.SqlSession;
+
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import jakarta.annotation.Resource;
 import org.hkex.owbookmanage.dao.UserMapper;
 import org.hkex.owbookmanage.entity.User;
 import org.hkex.owbookmanage.service.UserService;
-import org.hkex.owbookmanage.util.MybatisUtil;
+import org.springframework.stereotype.Service;
 
-public class UserServiceImpl implements UserService {
+@Service
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+
+    @Resource
+    private UserMapper mapper;
+
     @Override
-    public boolean auth(String username, String password, HttpSession session) {
-        try(SqlSession sqlSession = MybatisUtil.getSession()){
-            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-            User user = mapper.getUser(username, password);
-            User admin = mapper.getAdmin(username, password);
-            if(user == null && admin == null)return false;
-            if(admin != null)session.setAttribute("user", admin);
-            else session.setAttribute("user", user);
-            return true;
-        }
+    public User getUserWithoutPassword(String username) {
+        return mapper.selectOne(Wrappers.<User>query().select("id", "username", "nickname").eq("username", username));
     }
 }

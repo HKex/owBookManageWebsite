@@ -7,8 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("user")
-public class User {
+@TableName("admin")
+public class Admin {
     @TableId(type = IdType.AUTO)
     int id;
     @TableField("username")

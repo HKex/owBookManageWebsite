@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<base href="/ow/">
-<link rel="stylesheet" type="text/css" href="static/css/login_style.css">
+<link rel="stylesheet" type="text/css" href="../static/css/login_style.css">
+<!--href="static/css/login_style.css"-->
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
-    <LINK rel="icon" type="image/svg+xml" href="static/image/ow_icon.svg">
+    <LINK rel="icon" type="image/svg+xml" href="../static/image/ow_icon.svg">
 </head>
 <body>
     <h1 id="title">登录图书管理系统</h1>
-    <form class="login" method="post" action="login">
+    <form class="login" method="post" th:action="@{doLogin}">
         <div>
             <label>
                 <input type="text" name="username" placeholder="用户名">

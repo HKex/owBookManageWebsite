@@ -11,7 +11,7 @@ import org.hkex.owbookmanage.entity.User;
 
 import java.io.IOException;
 
-@WebFilter("/*")
+
 public class MainFilter extends HttpFilter {
 
     //非登录状态时只允许获取static & login页面
@@ -23,7 +23,7 @@ public class MainFilter extends HttpFilter {
             HttpSession session = req.getSession();
             User user = (User)session.getAttribute("user");
             if(user == null){
-                res.sendRedirect("/ow/login");
+                res.sendRedirect("/login");
                 return;
             }
         }
